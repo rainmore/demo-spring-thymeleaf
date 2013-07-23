@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:include="layout/head :: head">
+    <title>Home</title>
+</head>
+<body>
+<div th:substituteby="layout/navbar :: navbar"></div>
+<div class="container">
+    <section layout:fragment="content">
+        <p>Page content goes here</p>
+    </section>
+</div>
+<div th:substituteby="layout/footer :: footer"></div>
+<footer layout:fragment="templates/layouts/parts/footer.html">
+    My Footer
+</footer>
+</body>
+</html>

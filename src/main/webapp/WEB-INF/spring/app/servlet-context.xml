@@ -12,7 +12,7 @@
     <context:component-scan base-package="net.rainmore.demo.mvc"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="prefix" value="/WEB-INF/views/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
 
@@ -23,21 +23,6 @@
         up static resources in the ${webappRoot}/resources directory -->
     <!--<resources mapping="/resources/**" location="/resources/" />-->
 
-    <!-- localization start -->
-    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-        <property name="basenames" value="messages" />
-    </bean>
-
-    <!-- Declare the Interceptor -->
-    <mvc:interceptors>
-        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
-            <property name="paramName" value="locale" />
-        </bean>
-    </mvc:interceptors>
-
-    <!-- Declare the Resolver -->
-    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver" />
-    <!-- localization end -->
-
-
+    <import resource="locale-context.xml" />
+    <import resource="thymeleaf-context.xml" />
 </beans>

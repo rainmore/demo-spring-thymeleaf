@@ -12,6 +12,25 @@
             <a href="/?lang=en">EN</a><a href="/?lang=zh">CN</a>
         </p>
     </div>
+
+    <div align="right">
+        <div>
+            <fmt:message key="button.locale"/>:
+            <c:url var="englishLocaleUrl" value="/">
+                <c:param name="locale" value="" />
+            </c:url>
+            <c:url var="spanishLocaleUrl" value="/">
+                <c:param name="locale" value="es" />
+            </c:url>
+
+            <a href='<c:out value="${englishLocaleUrl}"/>'><fmt:message key="locale.english"/></a>
+            <a href='<c:out value="${spanishLocaleUrl}"/>'><fmt:message key="locale.spanish"/></a>
+        </div>
+
+        <div>&nbsp;</div>
+
+        <div><fmt:message key="site.footer"/></div>
+    </div>
 </footer>
 </body>
 </html>

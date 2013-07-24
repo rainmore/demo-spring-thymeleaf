@@ -28,5 +28,13 @@
         <property name="characterEncoding" value="UTF-8" />
     </bean>
 
+    <bean name="main" class="org.thymeleaf.spring3.view.ThymeleafView">
+        <property name="staticVariables">
+            <map>
+                <entry key="footer" value="Some company: &lt;b&gt;Scala Solution&lt;/b&gt;" />
+            </map>
+        </property>
+    </bean>
+
 
 </beans>

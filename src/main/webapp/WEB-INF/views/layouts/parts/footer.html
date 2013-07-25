@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head th:include="head :: head"></head>
 <body>
 <footer th:fragment="footer" class="footer">
@@ -8,28 +10,18 @@
         <p>
             Built with all the love in the world by <a
                 href="http://www.scala-solution.com.au">Scala Solution</a>.
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="/?lang=en">EN</a><a href="/?lang=zh">CN</a>
         </p>
     </div>
 
     <div align="right">
         <div>
-            <fmt:message key="button.locale"/>:
-            <c:url var="englishLocaleUrl" value="/">
-                <c:param name="locale" value="" />
-            </c:url>
-            <c:url var="spanishLocaleUrl" value="/">
-                <c:param name="locale" value="es" />
-            </c:url>
-
-            <a href='<c:out value="${englishLocaleUrl}"/>'><fmt:message key="locale.english"/></a>
-            <a href='<c:out value="${spanishLocaleUrl}"/>'><fmt:message key="locale.spanish"/></a>
+            <a href='?locale=en' th:href="@{'/?locale=en'}" th:text="#{locale.english}">English</a>
+            <a href='?locale=es' th:href="@{'/?locale=es'}" th:text="#{locale.spanish}">Spanish</a>
         </div>
 
         <div>&nbsp;</div>
 
-        <div><fmt:message key="site.footer"/></div>
+        <div th:text="#{site.footer}">Footer Info</div>
     </div>
 </footer>
 </body>

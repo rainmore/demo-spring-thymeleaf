@@ -1,14 +1,12 @@
-package net.rainmore.demo.mvc;
+package net.rainmore.demo.mvc.controllers;
 
 
+import net.rainmore.demo.mvc.utils.ViewHelpers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import java.util.List;
 
 @Controller
 @RequestMapping("/")
@@ -20,7 +18,7 @@ public class HomeController extends AbstractController {
     @RequestMapping(method = RequestMethod.GET)
     public String printWelcome(ModelMap model) {
         model.addAttribute("hello", "Hello world!");
-        return "pages/home/default";
+        return ViewHelpers.buildViewPath("home/default");
     }
 
 }

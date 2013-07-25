@@ -1,4 +1,4 @@
-package net.rainmore.demo.mvc;
+package net.rainmore.demo.mvc.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
